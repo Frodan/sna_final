@@ -1,11 +1,9 @@
 import redis
-import os
 from flask import Flask, render_template
 
-DB_HOST = os.getenv('DB_HOST')
 
 app = Flask(__name__)
-r = redis.Redis(host=DB_HOST, port=6379)
+r = redis.Redis(host="172.31.42.182", port=6379)
 
 r.set('counter', 0)
 
