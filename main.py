@@ -1,11 +1,13 @@
 import redis
 from flask import Flask, render_template
+import logging
 
-
-app = Flask(__name__)
-r = redis.Redis(host="172.31.42.182", port=6379)
-
-r.set('counter', 0)
+try:
+    app = Flask(__name__)
+    r = redis.Redis(host="172.31.42.182", port=6379)
+    r.set('counter', 0)
+except Exception as err:
+   logging.debug(err)
 
 @app.route('/')
 def index():
@@ -14,4 +16,7 @@ def index():
     return render_template('index.html', counter=counter)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    try:
+        app.run(host="0.0.0.0", port=8000)
+    except Exception as err:
+        logging.debug(err)
