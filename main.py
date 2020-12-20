@@ -14,6 +14,7 @@ except Exception as err:
 
 
 try:
+    app = Flask(__name__)
     r = redis.Redis(host="172.31.42.182", port=6379)
     r.set('counter', 0)
 except Exception as err:
@@ -31,7 +32,6 @@ def index():
 
 if __name__ == "__main__":
     try:
-        app = Flask(__name__)
         app.run(host="0.0.0.0", port=8000)
     except Exception as err:
         logging.debug("Error in the app:")
