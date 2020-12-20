@@ -2,7 +2,7 @@ import redis
 from flask import Flask, render_template
 import logging
 
-Logging.basicConfig(filename="/home/ubuntu/sna_final/log.log", level=(logging.INFO, logging.DEBUG, logging.ERROR))
+logging.basicConfig(filename="/home/ubuntu/sna_final/log.log", level=(logging.INFO, logging.DEBUG, logging.ERROR))
 
 try:
     app = Flask(__name__)
