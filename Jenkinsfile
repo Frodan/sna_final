@@ -25,7 +25,11 @@ pipeline {
             steps{
                 echo "deplooooy"
                 //sh "ls /home/ubuntu"
-                sh "ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233"
+                sh '''
+                ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233
+                ansible-playbook web_deploy.yml
+                ansible-playbook db_deploy.yml
+                '''
             }
         }
     }
