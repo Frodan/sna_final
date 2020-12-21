@@ -2,7 +2,7 @@ import logging
 import sys
 
 
-logging.basicConfig(filename="/home/ubuntu/sna_final/log.log", level=logging.DEBUG)
+#logging.basicConfig(filename="/home/ubuntu/sna_final/log.log", level=logging.DEBUG)
 
 try:
     import redis
@@ -16,7 +16,8 @@ except Exception as err:
 try:
     app = Flask(__name__)
     r = redis.Redis(host="172.31.42.182", port=6379)
-    r.set('counter', 0)
+    if not r.get('counter'):
+        r.set('counter', 0)
 except Exception as err:
     ("Can not connect to DB:")
     logging.debug(err)
