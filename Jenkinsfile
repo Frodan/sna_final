@@ -26,8 +26,7 @@ pipeline {
                 echo "deplooooy"
                 //sh "ls /home/ubuntu"
                 sh '''
-                ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233
-                ifconfig
+                ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233 ansible-playbook /home/ubuntu/flask-ansible/deploy_web.yml && ansible-playbook /home/ubuntu/flask-ansible/deploy_db.yml
                 '''
                 //ansible-playbook /home/ubuntu/flask-ansible/deploy_web.yml
                 //ansible-playbook /home/ubuntu/flask-ansible/deploy_db.yml
