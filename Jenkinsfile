@@ -21,5 +21,11 @@ pipeline {
                 sh "python3 test.py"
             }
         }
+        stage('Deploy'){
+            steps{
+                echo "deplooooy"
+                sh "ssh -i ~/home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233"
+            }
+        }
     }
 }
