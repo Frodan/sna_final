@@ -24,7 +24,8 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "deplooooy"
-                sh "ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233 date"
+                sh "ls /home/ubuntu"
+                //sh "ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233 date"
             }
         }
     }
