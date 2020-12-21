@@ -17,6 +17,7 @@ pipeline {
         }
         stage('Test'){
             steps{
+                echo "test stage"
                 sh "python3 test.py"
             }
         }
