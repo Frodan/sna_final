@@ -25,7 +25,7 @@ pipeline {
             steps{
                 echo "deplooooy"
                 //sh "ls /home/ubuntu"
-                sh "ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@18.188.244.100 top"
+                sh "ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233"
             }
         }
     }
