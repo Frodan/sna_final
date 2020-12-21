@@ -28,11 +28,7 @@ pipeline {
                 sh '''
                 ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233 ansible-playbook /home/ubuntu/flask-ansible/deploy_web.yml
                 '''
-                sh '''
-                ssh -i /home/ubuntu/NotVeryWell.pem ubuntu@172.31.42.233 ansible-playbook /home/ubuntu/flask-ansible/deploy_db.yml
-                '''
                 //ansible-playbook /home/ubuntu/flask-ansible/deploy_web.yml
-                //'''
             }
         }
     }
